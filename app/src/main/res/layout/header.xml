@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Layout1"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    >
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleView"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/defualt_imag"
+        android:layout_alignParentLeft="true"
+        android:paddingBottom="5dp" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:layout_toRightOf="@+id/circleView"
+        android:text="safsd"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <TextView
+        android:id="@+id/second"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/email"
+        android:layout_toRightOf="@+id/circleView"
+        android:text="safsd"
+        android:textColor="#d3d3d3"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <TextView
+        android:id="@+id/third"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:layout_below="@+id/second"
+        android:layout_toRightOf="@+id/circleView"
+        android:text="safsd"
+        android:layout_marginTop="10dp"
+        android:textColor="#d3d3d3"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+
+
+
+</RelativeLayout>
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+    <TextView
+        android:id="@+id/agendaTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold"
+        android:text="Test Session"
+        android:typeface="serif"
+        android:textColor="@color/colorWhite"/>
+
+    <TextView
+        android:id="@+id/agendaHallname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/agendaTitle"
+        android:layout_marginTop="10dp"
+        android:typeface="serif"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Test Session"
+        android:textColor="@color/colorWhite"/>
+    <TextView
+        android:id="@+id/agendaSession"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/agendaHallname"
+        android:layout_marginTop="10dp"
+        android:text="Test Session"
+        android:typeface="serif"
+        android:textColor="@color/colorWhite"/>
+    <TextView
+        android:id="@+id/agendaSessionType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/agendaSession"
+        android:layout_marginTop="10dp"
+        android:text="Test Session"
+        android:typeface="serif"
+        android:textColor="@color/colorWhite"/>
+</RelativeLayout>

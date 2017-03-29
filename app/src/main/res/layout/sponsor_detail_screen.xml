@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_bg">
+    <RelativeLayout
+        android:id="@+id/relativeHeader"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@mipmap/nav_bar"
+        android:layout_alignParentTop="true">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Sponsor"
+            android:id="@+id/txtHeader"
+            android:gravity="center"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:textColor="#ffffff"
+            />
+
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativeHeader">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgSponsorImage"
+                android:src="@mipmap/defualt_imag"
+                android:adjustViewBounds="true"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgSponsorImage"
+                android:gravity="center"
+                android:padding="10dp"
+                android:id="@+id/txtCategory"
+                android:background="@color/colorAccent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Gold"
+                android:textColor="@color/colorWhite"
+                android:typeface="serif"
+                android:textStyle="bold"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtDetail"
+                android:padding="10dp"
+                android:text=""
+                android:layout_below="@+id/txtCategory"
+                android:typeface="serif"
+                android:textColor="@color/colorWhite"/>
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

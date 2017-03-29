@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/activity_bg"
+    >
+
+    <RelativeLayout
+        android:id="@+id/relativeHeader"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@mipmap/nav_bar"
+        android:layout_alignParentTop="true"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Speakers Details"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:textColor="#ffffff"
+            />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_gravity="center_horizontal" >
+        <LinearLayout
+            android:id="@+id/progressbar_view"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:paddingBottom="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/defualt_imag"
+                android:adjustViewBounds="true"
+                />
+
+            <TextView
+                android:id="@+id/first"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textColor="#ffffff"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:layout_gravity="center_vertical"
+                android:text="" />
+            <TextView
+                android:id="@+id/two"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textColor="#ffffff"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:layout_gravity="center_vertical"
+                android:text="" />
+            <TextView
+                android:id="@+id/three"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textColor="#ffffff"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:layout_gravity="center_vertical"
+                android:text="" />
+            <TextView
+                android:id="@+id/fourr"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textColor="#ffffff"
+                android:textSize="14dp"
+                android:typeface="serif"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:text="" />
+            <TextView
+                android:id="@+id/fivee"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textColor="#ffffff"
+                android:textSize="14dp"
+                android:typeface="serif"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:text="" />
+
+        </LinearLayout>
+        </ScrollView>
+</LinearLayout>
+

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/rlMainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/topicTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold"
+            android:text="Test Session"
+            android:typeface="serif"
+            android:textColor="@color/colorWhite"/>
+
+        <TextView
+            android:id="@+id/txtTimeFrom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topicTitle"
+            android:layout_marginTop="10dp"
+            android:text="Time From"
+            android:typeface="serif"
+            android:textColor="@color/colorWhite"/>
+        <TextView
+            android:id="@+id/txtTimeTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test Session"
+            android:typeface="serif"
+            android:textColor="@color/colorWhite"
+            android:layout_alignTop="@+id/txtTimeFrom"
+            android:layout_alignParentRight="true" />
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtTimeFrom"
+            android:layout_marginTop="10dp"
+            android:text="Test Session"
+            android:typeface="serif"
+            android:textColor="@color/colorWhite"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorWhite"
+        android:layout_below="@+id/rlMainContainer">
+
+    </RelativeLayout>
+
+</RelativeLayout>

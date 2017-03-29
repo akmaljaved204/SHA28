@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:id="@+id/relativeHeader"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@mipmap/header_white"
+        android:layout_alignParentTop="true"
+        >
+
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="140dp">
+
+        <LinearLayout
+            android:id="@+id/real_time_linear"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="bottom"
+            android:background="#a4040b"
+            android:layout_height="140dp">
+
+
+            <ImageView
+                android:id="@+id/real_time_agenda"
+                android:layout_height="90dp"
+                android:layout_width="fill_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:background="#ffffff"
+                android:src="@mipmap/real_time_agenda"
+                />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Real Time Agenda "
+                android:textSize="16dp"
+                android:layout_marginBottom="5dp"
+               android:gravity="center"
+                android:textColor="#ffffff"
+                 />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/speaker_linear"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#a4040b"
+            android:layout_height="140dp">
+
+
+            <ImageView
+                android:id="@+id/speaker_recognisation"
+                android:layout_height="90dp"
+                android:layout_width="fill_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="#ffffff"
+                android:src="@mipmap/speaker"
+                />
+
+            <TextView
+                android:id="@+id/listname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Speakers Biographics "
+                android:textSize="16dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="140dp">
+
+        <LinearLayout
+            android:id="@+id/sponser_layout"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="bottom"
+            android:background="#a4040b"
+            android:layout_height="140dp">
+
+
+            <ImageView
+                android:id="@+id/sponser"
+                android:layout_height="90dp"
+                android:layout_width="fill_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:background="#ffffff"
+                android:src="@mipmap/sponser"
+                />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sponsers "
+                android:textSize="16dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/floor_layout"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#a4040b"
+            android:layout_height="140dp">
+
+
+            <ImageView
+                android:id="@+id/floorplan"
+                android:layout_height="90dp"
+                android:layout_width="fill_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="15dp"
+                android:background="#ffffff"
+                android:layout_marginLeft="15dp"
+                android:src="@mipmap/floor"
+                />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Floor Plan"
+                android:textSize="16dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="140dp">
+
+        <LinearLayout
+            android:id="@+id/logout_linear"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="bottom"
+            android:background="#a4040b"
+            android:layout_height="140dp">
+
+
+            <ImageView
+                android:id="@+id/logout"
+                android:layout_height="90dp"
+                android:layout_width="fill_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:background="#ffffff"
+                android:src="@mipmap/logout"
+                />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:textSize="16dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            android:gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#ffccff"
+            android:layout_height="140dp">
+
+
+            <ImageView
+
+                android:layout_height="90dp"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+
+                />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="vdfdg "
+                android:textSize="16dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

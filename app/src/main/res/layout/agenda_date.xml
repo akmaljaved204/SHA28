@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/rlMainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold"
+            android:text="Test Session"
+            android:typeface="serif"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/colorWhite"
+            android:layout_toLeftOf="@+id/imgArrow"
+            android:layout_toStartOf="@+id/imgArrow" />
+
+        <TextView
+            android:id="@+id/second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/first"
+            android:layout_marginTop="10dp"
+            android:text="Time From"
+            android:typeface="serif"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="@color/colorWhite"
+            android:layout_alignRight="@+id/first"
+            android:layout_alignEnd="@+id/first" />
+        <ImageView
+            android:id="@+id/imgArrow"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/arrow"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+        <TextView
+            android:id="@+id/third"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/second"
+            android:layout_marginTop="10dp"
+            android:text="Test Session"
+            android:typeface="serif"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="@color/colorWhite"
+            android:layout_alignRight="@+id/first"
+            android:layout_alignEnd="@+id/first" />
+
+    </RelativeLayout>
+</RelativeLayout>

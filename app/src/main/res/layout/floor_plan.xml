@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/activity_bg"
+    >
+    <RelativeLayout
+        android:id="@+id/relativeHeader"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@mipmap/nav_bar"
+        android:layout_alignParentTop="true"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Floor Plan"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            />
+
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/imge"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_horizontal"
+        />
+    <!--<com.jsibbold.zoomage.ZoomageView
+        android:id="@+id/imge"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/defualt_imag"
+        />-->
+</LinearLayout>

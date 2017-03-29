@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        <ImageView
+            android:id="@+id/imgSponsorImage"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@mipmap/defualt_imag"/>
+        <TextView
+            android:id="@+id/txtSponsorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgSponsorImage"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:text="Sponsor Name"/>
+    </RelativeLayout>
+
+</RelativeLayout>
