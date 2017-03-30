@@ -7,7 +7,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.GridView;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
@@ -21,13 +20,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import adapters.AdapterForSponsor;
-import adapters.AgendaAdapter;
 import adapters.SectionedGridRecyclerViewAdapter;
 import adapters.SimpleAdapter;
 import model.GenratClasses;
 import model.Sponsor;
-import model.SponsorObject;
 import utils.Global;
 import utils.OnApihit;
 import utils.Progress;
@@ -36,7 +32,6 @@ import utils.VolleyBase;
 public class SponsorScreen extends Activity {
 
     private Progress pd;
-    private String event_id,key;
     private SharedPreferences sp;
     private List<Sponsor> sponsorList;
     private RecyclerView mRecyclerView;
@@ -48,8 +43,6 @@ public class SponsorScreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sponsor_screen);
         sp=getSharedPreferences(Global.PREF_LOGIN, Context.MODE_PRIVATE);
-        key=sp.getString(Global.USER_ID,"");
-        event_id=sp.getString(Global.USER_EventID,"");
         mRecyclerView = (RecyclerView)findViewById(R.id.sponsor_recyle);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this,3));
@@ -60,8 +53,7 @@ public class SponsorScreen extends Activity {
         pd=new Progress(SponsorScreen.this);
         pd.show();
         Map<String, String> params = new HashMap<>();
-        params.put("eventId",event_id);
-        params.put("key",key);
+        params.put("eventId",Global.EVENT_ID);
         new VolleyBase(new OnApihit() {
             @Override
             public void success(String Responce)
@@ -98,7 +90,7 @@ public class SponsorScreen extends Activity {
                 pd.dismiss();
                 Toast.makeText(getApplicationContext(),"Check your internet connection",Toast.LENGTH_LONG).show();
             }
-        }).main(params,"http://krecloud.com/api/v2/get_sponsors");
+        }).main(params,Global.BASE_URL+"get_sponsors");
     }
     public void onItemClick(Sponsor sponsor){
         Intent intent=new Intent(SponsorScreen.this,SponsorDetailScreen.class);

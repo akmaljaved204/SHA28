@@ -13,10 +13,6 @@ import com.squareup.picasso.Picasso;
 import utils.Global;
 import utils.Progress;
 
-/**
- * Created by admin on 3/8/2017.
- */
-
 public class SpeakersBiographyDetails extends Activity {
 
     ImageView main_inmg;

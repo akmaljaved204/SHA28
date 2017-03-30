@@ -23,11 +23,10 @@ public class Global {
     public static String USER_INTERESTS = "userinterests";
     public static String USER_LANGUAGES = "userlangknown";
     public static String USER_MOBILE = "usermobile";
-
     public static String USER_IMAGE = "userimage";
-
     public static final String URL= "http://52.33.49.61/ChatRoom/userServices/index";
 
+    public static final String EVENT_ID="200";
 
     public static final String DEVICE_ID = "device_Id";
     public static final String DEVICE_STATUS = "device_Status";
@@ -36,6 +35,7 @@ public class Global {
     public static final String CLASS_NAME = "sign";
     public static final String GCM_SENDER_ID = "153458783792";
 
-    public static final String BASE_URL="http://krecloud.com/api/v1/get_agenda";
+    //public static final String BASE_URL="http://krecloud.com/api/v3/get_agenda";
+    public static final String BASE_URL="http://krecloud.com/api/v3/";
     public static final String BASE_URL_IMAGE="http://krecloud.com/";
 }

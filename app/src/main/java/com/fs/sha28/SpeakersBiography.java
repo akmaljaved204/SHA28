@@ -26,16 +26,11 @@ import utils.OnApihit;
 import utils.Progress;
 import utils.VolleyBase;
 
-/**
- * Created by admin on 3/7/2017.
- */
-
 public class SpeakersBiography extends Activity {
   ListView list_view;
     Progress pd;
     SharedPreferences sp;
     HashMap<String, String> map;
-    String event_id,key;
     HomeGridAdapter adapter;
     ArrayList<HashMap<String,String>> dealsList;
     @Override
@@ -44,19 +39,14 @@ public class SpeakersBiography extends Activity {
         setContentView(R.layout.speakersbio);
         list_view=(ListView)findViewById(R.id.list_view);
         sp=getSharedPreferences(Global.PREF_LOGIN, Context.MODE_PRIVATE);
-        key=sp.getString(Global.USER_ID,"");
-        event_id=sp.getString(Global.USER_EventID,"");
         getDeals();
-
-
     }
 
     private void getDeals(){
         pd=new Progress(SpeakersBiography.this);
         pd.show();
         Map<String, String> params = new HashMap<>();
-        params.put("eventId",event_id);
-        params.put("key",key);
+        params.put("eventId",Global.EVENT_ID);
 
         new VolleyBase(new OnApihit() {
             @Override
@@ -100,8 +90,6 @@ public class SpeakersBiography extends Activity {
                             intent.putExtra("BigImage", dealsList.get(position).get("BigImage"));
                             startActivity(intent);
                             overridePendingTransition(0,0);
-
-
                         }
                     });
 
@@ -115,6 +103,6 @@ public class SpeakersBiography extends Activity {
                 pd.dismiss();
                 Toast.makeText(getApplicationContext(),"Check your internet connection",Toast.LENGTH_LONG).show();
             }
-        }).main(params,"http://krecloud.com/api/v1/get_speakers");
+        }).main(params,Global.BASE_URL+"get_speakers");
     }
 }

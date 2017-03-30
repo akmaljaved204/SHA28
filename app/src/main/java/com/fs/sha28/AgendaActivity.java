@@ -40,7 +40,6 @@ public class AgendaActivity extends Activity implements AdapterView.OnItemClickL
     private ListView list_view;
     private EditText edtSearch;
     private Progress pd;
-    private String event_id,key;
     private SharedPreferences sp;
     private int selectedTab=0;
 
@@ -54,8 +53,6 @@ public class AgendaActivity extends Activity implements AdapterView.OnItemClickL
         list_view=(ListView) findViewById(R.id.list_view);
         list_view.setOnItemClickListener(this);
         sp=getSharedPreferences(Global.PREF_LOGIN, Context.MODE_PRIVATE);
-        key=sp.getString(Global.USER_ID,"");
-        event_id=sp.getString(Global.USER_EventID,"");
         edtSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -106,8 +103,7 @@ public class AgendaActivity extends Activity implements AdapterView.OnItemClickL
         pd=new Progress(AgendaActivity.this);
         pd.show();
         Map<String, String> params = new HashMap<>();
-        params.put("eventId",event_id);
-        params.put("key",key);
+        params.put("eventId",Global.EVENT_ID);
         new VolleyBase(new OnApihit() {
             @Override
             public void success(String Responce)
@@ -130,7 +126,7 @@ public class AgendaActivity extends Activity implements AdapterView.OnItemClickL
                 pd.dismiss();
                 Toast.makeText(getApplicationContext(),"Check your internet connection",Toast.LENGTH_LONG).show();
             }
-        }).main(params,"http://krecloud.com/api/v1/get_agenda");
+        }).main(params,Global.BASE_URL+"realtimeagenda");
     }
 
     private void onChangeTab(){

@@ -6,10 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
-/**
- * Created by admin on 3/7/2017.
- */
-
 public class MainActivity  extends Activity {
     LinearLayout real_time_linear,speaker_linear,sponser_layout,floor_layout,logout_linear;
 
@@ -58,7 +54,7 @@ public class MainActivity  extends Activity {
             }
         });
 
-        logout_linear.setOnClickListener(new View.OnClickListener() {
+       /* logout_linear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(getApplicationContext(),Login.class);
@@ -66,7 +62,7 @@ public class MainActivity  extends Activity {
                 finish();
                 overridePendingTransition(0,0);
             }
-        });
+        });*/
 
 
     }

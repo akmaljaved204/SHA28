@@ -23,7 +23,7 @@ public class SplashActivity extends Activity {
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-                Intent mainIntent = new Intent(SplashActivity.this,Login.class);
+                Intent mainIntent = new Intent(SplashActivity.this,HomeScreen.class);
                 startActivity(mainIntent);
                 overridePendingTransition(0,0);
                 finish();
