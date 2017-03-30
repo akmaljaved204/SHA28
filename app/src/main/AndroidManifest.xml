@@ -29,8 +29,9 @@
             android:name=".MainActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-        <activity android:name=".HomeScreen"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".HomeScreen"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".FloorActivity"
             android:configChanges="orientation|screenSize"
@@ -51,12 +52,12 @@
         <activity
             android:name=".SponsorScreen"
             android:configChanges="orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SponsorDetailScreen"
             android:configChanges="orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
-
+            android:screenOrientation="portrait" />
+        <activity android:name=".TempForCommitTest"></activity>
     </application>
 
 </manifest>
