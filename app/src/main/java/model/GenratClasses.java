@@ -47,4 +47,17 @@ public class GenratClasses {
 		return sponsors;
 	}
 
+	public List<EventDay> getEventDays(String data)
+	{
+		ObjectMapper mapper = new ObjectMapper();
+		List<EventDay> eventDays=new ArrayList<>();
+		try
+		{
+			eventDays = mapper.readValue(data, new TypeReference<List<EventDay>>(){});
+			return eventDays;
+		}catch(Exception e){}
+
+		return eventDays;
+	}
+
 }

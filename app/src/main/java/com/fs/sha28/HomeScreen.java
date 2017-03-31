@@ -8,6 +8,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
+
+import com.android.volley.VolleyError;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import adapters.AgendaAdapter;
+import model.GenratClasses;
+import utils.Global;
+import utils.OnApihit;
+import utils.Progress;
+import utils.VolleyBase;
 
 public class HomeScreen extends Activity implements View.OnClickListener{
 
@@ -31,6 +48,7 @@ public class HomeScreen extends Activity implements View.OnClickListener{
         btnExhibitor.setOnClickListener(this);
         btnFloorPlan.setOnClickListener(this);
         btnMenu.setOnClickListener(this);
+        getDeals();
     }
 
     @Override
@@ -50,5 +68,29 @@ public class HomeScreen extends Activity implements View.OnClickListener{
             Intent intent = new Intent(HomeScreen.this,FloorActivity.class);
             startActivity(intent);
         }
+    }
+    private void getDeals(){
+        Map<String, String> params = new HashMap<>();
+        params.put("eventId", Global.EVENT_ID);
+        new VolleyBase(new OnApihit() {
+            @Override
+            public void success(String Responce)
+            {
+                try
+                {
+                    JSONObject jsonObject = new JSONObject(Responce);
+                    Global.EVENT_DAYS=new GenratClasses().getEventDays(jsonObject.getJSONArray("agenda_days").toString());
+                    System.out.print(jsonObject);
+
+                }
+                catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            @Override
+            public void error(VolleyError error) {
+                Toast.makeText(getApplicationContext(),"Check your internet connection",Toast.LENGTH_LONG).show();
+            }
+        }).main(params,Global.BASE_URL+"agendaDays");
     }
 }

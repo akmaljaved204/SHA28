@@ -1,5 +1,10 @@
 package utils;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import model.EventDay;
+
 /**
  * Created by Tejinder on 3/22/2016.
  */
@@ -34,8 +39,9 @@ public class Global {
     public static final String APP_VERSION = "gfuashfuo";
     public static final String CLASS_NAME = "sign";
     public static final String GCM_SENDER_ID = "153458783792";
-
     //public static final String BASE_URL="http://krecloud.com/api/v3/get_agenda";
     public static final String BASE_URL="http://krecloud.com/api/v3/";
     public static final String BASE_URL_IMAGE="http://krecloud.com/";
+
+    public static List<EventDay> EVENT_DAYS=new ArrayList<>();
 }

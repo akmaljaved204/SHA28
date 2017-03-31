@@ -9,9 +9,13 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.android.volley.VolleyError;
@@ -31,12 +35,17 @@ import utils.Global;
 import utils.OnApihit;
 import utils.Progress;
 import utils.VolleyBase;
+import view.DayView;
+
+import static utils.Global.EVENT_DAYS;
 
 
-public class AgendaActivity extends Activity implements AdapterView.OnItemClickListener {
-    private TextView txtDate,txtDay,txtSession;
+public class AgendaActivity extends Activity implements AdapterView.OnItemClickListener, View.OnClickListener {
     private List<Agenda> agendaList=new ArrayList<>();
     private List<Agenda> agendaSearchList=new ArrayList<>();
+    private RelativeLayout rlNormal,rlSearch;
+    private ImageView imgClose,imgSearch;
+    private LinearLayout llDayContainer;
     private ListView list_view;
     private EditText edtSearch;
     private Progress pd;
@@ -46,12 +55,17 @@ public class AgendaActivity extends Activity implements AdapterView.OnItemClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_test);
-        txtDate=(TextView)findViewById(R.id.txtDate);
-        txtDay=(TextView)findViewById(R.id.txtDay);
-        txtSession=(TextView)findViewById(R.id.txtSession);
+        llDayContainer= (LinearLayout) findViewById(R.id.llDayContainer);
+        llDayContainer.setWeightSum((float)Global.EVENT_DAYS.size());
         edtSearch=(EditText) findViewById(R.id.edtSearch);
         list_view=(ListView) findViewById(R.id.list_view);
+        imgClose=(ImageView) findViewById(R.id.imgCrossSearch);
+        imgSearch=(ImageView) findViewById(R.id.imgSearchIcon);
+        rlNormal=(RelativeLayout) findViewById(R.id.rlNormalView);
+        rlSearch=(RelativeLayout) findViewById(R.id.rlSearchView);
         list_view.setOnItemClickListener(this);
+        imgClose.setOnClickListener(this);
+        imgSearch.setOnClickListener(this);
         sp=getSharedPreferences(Global.PREF_LOGIN, Context.MODE_PRIVATE);
         edtSearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -70,33 +84,16 @@ public class AgendaActivity extends Activity implements AdapterView.OnItemClickL
             }
         });
         getDeals();
-        txtDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(selectedTab!=0){
-                    selectedTab=0;
-                    onChangeTab();
-                }
+
+        for(int i=0;i<Global.EVENT_DAYS.size();i++){
+            if(i==0){
+                Global.EVENT_DAYS.get(i).setSelected(true);
             }
-        });
-        txtDay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(selectedTab!=1){
-                    selectedTab=1;
-                    onChangeTab();
-                }
-            }
-        });
-        txtSession.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(selectedTab!=2){
-                    selectedTab=2;
-                    onChangeTab();
-                }
-            }
-        });
+            DayView dayView=new DayView(this,Global.EVENT_DAYS.get(i));
+            dayView.setOnClickListener(this);
+            llDayContainer.addView(dayView);
+        }
+
     }
 
     private void getDeals(){
@@ -129,25 +126,7 @@ public class AgendaActivity extends Activity implements AdapterView.OnItemClickL
         }).main(params,Global.BASE_URL+"realtimeagenda");
     }
 
-    private void onChangeTab(){
-        txtDate.setBackgroundResource(R.drawable.tabs_date_bg);
-        txtDay.setBackgroundResource(R.drawable.tabs_day_bg);
-        txtSession.setBackgroundResource(R.drawable.tabs_session_bg);
-        txtDate.setTextColor(Color.WHITE);
-        txtDay.setTextColor(Color.WHITE);
-        txtSession.setTextColor(Color.WHITE);
-        if(selectedTab==0){
-            txtDate.setBackgroundResource(R.drawable.tabs_date_bg_sel);
-            txtDate.setTextColor(Color.parseColor("#ef0d10"));
-        }else if(selectedTab==1){
-            txtDay.setBackgroundResource(R.drawable.tabs_day_bg_sel);
-            txtDay.setTextColor(Color.parseColor("#ef0d10"));
-        }else if(selectedTab==2){
-            txtSession.setBackgroundResource(R.drawable.tabs_session_bg_sel);
-            txtSession.setTextColor(Color.parseColor("#ef0d10"));
-        }
-        filterData();
-    }
+
 
     private void filterData(){
         if(selectedTab==0){
@@ -199,6 +178,27 @@ public class AgendaActivity extends Activity implements AdapterView.OnItemClickL
         Intent intent=new Intent(AgendaActivity.this, AgendaDetailScreen.class);
         intent.putExtra("agendaObject",agendaSearchList.get(position));
         startActivity(intent);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(imgClose==v){
+            rlNormal.setVisibility(View.VISIBLE);
+            rlSearch.setVisibility(View.GONE);
+        }else if(imgSearch==v){
+            rlNormal.setVisibility(View.GONE);
+            rlSearch.setVisibility(View.VISIBLE);
+        }else if(v instanceof DayView){
+            DayView clickedDayView=(DayView)v;
+            for(int i=0;i<llDayContainer.getChildCount();i++){
+                DayView dayView=(DayView)llDayContainer.getChildAt(i);
+                dayView.setUnSelected();
+            }
+            if(!clickedDayView.isSelected()){
+                clickedDayView.setSelected();
+            }
+
+        }
     }
 }
 
